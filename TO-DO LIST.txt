@@ -1,0 +1,21 @@
+Please create a new similar html page with the following 1 prompt and no multi-lines dynamic input field.
+Please don't edit, add, and delete anything of the prompt, keep them as they are in the relevant prompt boxes.
+Give me all the codes, css, and scripts in a single code box
+
+Page Header: TO-DO LIST
+
+Prompt:
+
+TO-DO LIST
+
+S#1: Collect A Prompt
+S#2: Generate Title & Description
+S#3: Finalize “Short Code”
+S#4: Generate URLs
+S#5: Create and upload:
+1, PGP
+2, Bridge Page
+S#6: Create Image + Generate Caption
+S#7: Add human input to image + rename it
+S#8: Publish Post
+S#9: Boost Post

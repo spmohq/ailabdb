@@ -1,0 +1,20 @@
+root = landing page of WhatsApp Channel
+free = with free vibe Bridge Page - (destination url)
+go = without free vibe Bridge Page - (destination url)
+v = app (= pgp)
+click = short.io
+
+free = with free vibe Bridge Page - (destination url)
+v = app (= pgp)
+
+
+
+
+ShortCode for Bridge Page Genie:
+[Short Code]
+
+Bridge Page:
+https://free.ailab.shop/[Short Code].html
+
+App Page (Destination of Bridge Page)
+https://free.ailab.shop/[Short Code].html

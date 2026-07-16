@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SBS Visual Tutorial | Prompt Genie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient-start: #020617;
+      --bg-gradient-end: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-primary: #22d3ee;
+      --accent-hover: #67e8f9;
+      --accent-success: #10b981;
+      --code-bg: rgba(0, 0, 0, 0.3);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --input-bg: rgba(15, 23, 42, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: fixed linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 850px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .workflow {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .label-group {
+      margin-bottom: 20px;
+    }
+
+    .step-label {
+      font-weight: 800;
+      font-size: 0.75rem;
+      background: var(--accent-primary);
+      color: #020617;
+      padding: 4px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .field-title {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 15px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+      outline: none;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+
+    textarea:last-child {
+      margin-bottom: 0;
+    }
+
+    textarea:focus {
+      border-color: var(--accent-primary);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .prompt-output-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 35px;
+      margin-top: 10px;
+    }
+
+    .prompt-content {
+      background: var(--code-bg);
+      padding: 30px;
+      border-radius: 12px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      white-space: pre-wrap;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 25px;
+      line-height: 1.6;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    /* Custom style for Prompt #2 (Bengali Support) */
+    #p2Display {
+      font-family: 'Hind Siliguri', 'Inter', sans-serif;
+    }
+
+    .copy-btn {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-primary);
+      color: #020617;
+    }
+
+    .copy-btn.copied {
+      background: var(--accent-success);
+      border-color: var(--accent-success);
+      color: white;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 40px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .step-card, .prompt-output-card { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>SBS Visual Tutorial</h1>
+    </header>
+
+    <div class="workflow">
+      
+      <!-- Input Section -->
+      <div class="step-card">
+        <div class="label-group">
+          <span class="step-label">Configuration</span>
+        </div>
+        
+        <label class="field-title">[Tutorial Title]</label>
+        <textarea id="titleInput" placeholder="Enter the tutorial name..." oninput="updatePrompts()"></textarea>
+
+        <label class="field-title">[URL]</label>
+        <textarea id="urlInput" placeholder="Enter the URL..." oninput="updatePrompts()"></textarea>
+
+        <label class="field-title">[Prompt Description]</label>
+        <textarea id="descInput" placeholder="Enter short description of what prompt does..." oninput="updatePrompts()"></textarea>
+      </div>
+
+      <!-- Prompt 1 Output -->
+      <div class="prompt-output-card">
+        <div class="label-group">
+          <span class="step-label">Prompt #1 (Visual AI)</span>
+        </div>
+        <div class="prompt-content" id="p1Display"></div>
+        <button class="copy-btn" onclick="copyText('p1Display', this)">
+          <span>Copy Prompt #1</span>
+        </button>
+      </div>
+
+      <!-- Prompt 2 Output -->
+      <div class="prompt-output-card">
+        <div class="label-group">
+          <span class="step-label">Prompt #2 (Social Caption)</span>
+        </div>
+        <div class="prompt-content" id="p2Display"></div>
+        <button class="copy-btn" onclick="copyText('p2Display', this)">
+          <span>Copy Prompt #2</span>
+        </button>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const p1Template = `Create an image: a clean, professional step-by-step visual tutorial showing [Tutorial Title].
+Aspect ratio: 16:9
+Break it into clear numbered steps (break it into exactly 4 steps), write a short action label for each, and add a simple supporting illustration or icon for every step. 
+Use a structured, easy-to-follow layout with consistent styling. 
+Break it into exactly 4 steps. 
+
+Use specifically these steps:
+
+1, Go to: [URL],
+
+2, Input your info,
+Copy the Generated Prompt.
+
+3, Open ChatGPT, 
+Paste Prompt, 
+and hit Enter, 
+
+4, Download Image 
+and use.
+
+Design it in a hand-written style.
+
+Use this color scheme:
+Page Background		#FFFFFF
+Text Box Background	#F9FAFB
+Border			#E5E7EB
+Heading			#111111
+Body			#333333
+Secondary		#666666
+
+FOOTER
+
+Use "AI Lab" as the logo/brand name of this SBS Visual Tutorial.
+
+Add a smaller tagline under the logo text:
+“get more ai prompts for free”
+Also add URL under the tagline: www.AILab.shop
+
+IMPORTANT:
+Do not use any icon, symbol, emblem, illustration, or graphic mark with the logo.
+The logo should be typography-only.
+
+LOGO STYLE & PLACEMENT INSTRUCTION:
+
+Place a small clean typography-based business logo at the bottom-center of the SBS Visual Tutorial inside a rounded rectangular badge/container.
+Make the tagline visually match the full horizontal width of the “AI Lab” wordmark using balanced tracking and typography scaling.
+
+LOGO DESIGN STYLE:
+- Minimal modern typography logo
+- Text-only logo design
+- Professional but friendly appearance
+- No icon or symbol
+- Clean sans-serif lettering
+- Modern local-business branding aesthetic
+- Compact horizontal logo composition
+- Trustworthy and contemporary look
+- Balanced typography spacing
+- Simple flat design
+- No gradients
+- No decorative effects
+
+TEXT STYLE:
+- “AI Lab” in bold modern sans-serif typography
+- “get more ai prompts for free” below it in smaller clean typography
+- Highly readable
+- Minimalist typography treatment
+- Clean professional alignment
+
+LOGO CONTAINER STYLE:
+- Rounded rectangle capsule/badge
+- Soft border outline
+- Subtle shadow or elevation
+- White or light neutral background
+- Center aligned
+- Small and non-distracting
+- Professional footer-style branding
+
+PLACEMENT:
+- Bottom-center of the SBS Visual Tutorial
+- Positioned like a footer branding element
+- Leave comfortable spacing from the bottom edge
+- Keep the logo smaller than the main content sections
+- Ensure it feels naturally integrated into the SBS Visual Tutorial layout
+
+OVERALL FEEL:
+- Trustworthy
+- Clean
+- Modern
+- Small-business friendly
+- Social-media-ready
+- Professional but approachable
+- Suitable for Bengali/Indian local business branding`;
+
+    const p2Template = `[Tutorial Title]
+
+[Prompt Description]
+
+যারা এই ইমেজে কোনও বিশেষ পরিবর্তন বা এফেক্ট চান, তারা আমাকে সরাসরি ডিএম (DM) করতে পারেন। - Siva Prasad Mukherjee`;
+
+    function updatePrompts() {
+      const titleVal = document.getElementById('titleInput').value.trim() || "[Tutorial Title]";
+      const urlVal = document.getElementById('urlInput').value.trim() || "[URL]";
+      const descVal = document.getElementById('descInput').value.trim() || "[Prompt Description]";
+
+      // Update Prompt 1
+      let updatedP1 = p1Template.replace("[Tutorial Title]", titleVal);
+      updatedP1 = updatedP1.replace("[URL]", urlVal);
+
+      // Update Prompt 2
+      let updatedP2 = p2Template.replace("[Tutorial Title]", titleVal);
+      updatedP2 = updatedP2.replace("[Prompt Description]", descVal);
+
+      document.getElementById('p1Display').innerText = updatedP1;
+      document.getElementById('p2Display').innerText = updatedP2;
+    }
+
+    function copyText(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<span>Copied to Clipboard!</span>`;
+        btn.classList.add('copied');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Initialize display on page load
+    updatePrompts();
+  </script>
+</body>
+</html>

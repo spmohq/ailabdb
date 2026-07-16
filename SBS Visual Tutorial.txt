@@ -1,0 +1,116 @@
+Please create a new similar html page with the following 2 prompts and 3 dynamic input fields.
+Please don't edit, add, and delete anything of the prompt, keep them as they are in the relevant prompt boxes.
+Give me all the codes, css, and scripts in a single code box
+
+Page Header: SBS Visual Tutorial
+
+Dynamic input fields:
+
+[Tutorial Title]
+
+[URL]
+
+[Prompt Description]
+
+Prompt:
+
+Create an image: a clean, professional step-by-step visual tutorial showing [Tutorial Title].
+Aspect ratio: 16:9
+Break it into clear numbered steps (break it into exactly 4 steps), write a short action label for each, and add a simple supporting illustration or icon for every step. 
+Use a structured, easy-to-follow layout with consistent styling. 
+Break it into exactly 4 steps. 
+
+Use specifically these steps:
+
+1, Go to: [URL],
+
+2, Input your info,
+Copy the Generated Prompt.
+
+3, Open ChatGPT, 
+Paste Prompt, 
+and hit Enter, 
+
+4, Download Image 
+and use.
+
+Design it in a hand-written style.
+
+Use this color scheme:
+Page Background		#FFFFFF
+Text Box Background	#F9FAFB
+Border			#E5E7EB
+Heading			#111111
+Body			#333333
+Secondary		#666666
+
+FOOTER
+
+Use "AI Lab" as the logo/brand name of this SBS Visual Tutorial.
+
+Add a smaller tagline under the logo text:
+“get more ai prompts for free”
+Also add URL under the tagline: www.AILab.shop
+
+IMPORTANT:
+Do not use any icon, symbol, emblem, illustration, or graphic mark with the logo.
+The logo should be typography-only.
+
+LOGO STYLE & PLACEMENT INSTRUCTION:
+
+Place a small clean typography-based business logo at the bottom-center of the SBS Visual Tutorial inside a rounded rectangular badge/container.
+Make the tagline visually match the full horizontal width of the “AI Lab” wordmark using balanced tracking and typography scaling.
+
+LOGO DESIGN STYLE:
+- Minimal modern typography logo
+- Text-only logo design
+- Professional but friendly appearance
+- No icon or symbol
+- Clean sans-serif lettering
+- Modern local-business branding aesthetic
+- Compact horizontal logo composition
+- Trustworthy and contemporary look
+- Balanced typography spacing
+- Simple flat design
+- No gradients
+- No decorative effects
+
+TEXT STYLE:
+- “AI Lab” in bold modern sans-serif typography
+- “get more ai prompts for free” below it in smaller clean typography
+- Highly readable
+- Minimalist typography treatment
+- Clean professional alignment
+
+LOGO CONTAINER STYLE:
+- Rounded rectangle capsule/badge
+- Soft border outline
+- Subtle shadow or elevation
+- White or light neutral background
+- Center aligned
+- Small and non-distracting
+- Professional footer-style branding
+
+PLACEMENT:
+- Bottom-center of the SBS Visual Tutorial
+- Positioned like a footer branding element
+- Leave comfortable spacing from the bottom edge
+- Keep the logo smaller than the main content sections
+- Ensure it feels naturally integrated into the SBS Visual Tutorial layout
+
+OVERALL FEEL:
+- Trustworthy
+- Clean
+- Modern
+- Small-business friendly
+- Social-media-ready
+- Professional but approachable
+- Suitable for Bengali/Indian local business branding
+
+Prompt#2:
+
+[Tutorial Title]
+
+[Prompt Description]
+
+যারা এই ইমেজে কোনও বিশেষ পরিবর্তন বা এফেক্ট চান, তারা আমাকে সরাসরি ডিএম (DM) করতে পারেন। - Siva Prasad Mukherjee
